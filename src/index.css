@@ -370,7 +370,7 @@ ul li:hover {
   }
 }
 
-@media (max-width: 401px) {
+@media (max-width: 484px) {
   .container {
     margin: 1rem 0.2rem;
   }
