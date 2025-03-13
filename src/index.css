@@ -1,0 +1,377 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+  background-color: #202020;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container {
+  margin: 5rem 8rem;
+}
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image img {
+  width: 183px;
+  border-radius: 50%;
+}
+
+.profile-bio {
+  margin-left: 28px;
+  width: 70%;
+}
+
+.profile-bio h1 {
+  margin: 0;
+}
+
+.profile-bio p {
+  padding-top: 10px;
+  margin: 0;
+}
+
+.profile-socials {
+  text-align: end;
+}
+
+.profile-socials svg {
+  transition: all ease-in 0.2s;
+  width: 40px;
+}
+
+.profile-socials a:hover svg {
+  transform: scale(1.2);
+}
+
+hr {
+  border-width: 0px;
+  height: 0.5px;
+  background-color: rgba(167, 167, 167, 0.286);
+  margin: 30px 0 20px 0;
+}
+
+@media (max-width: 901px) {
+  .container {
+    margin: 2rem 2rem;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image img {
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  .profile-bio {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Movie Previews */
+ul,
+ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: all ease-in 0.3s;
+}
+
+ul li {
+  margin-bottom: 20px;
+}
+
+.letterboxd-content {
+  display: grid;
+  grid-template-columns: 1fr 800px;
+}
+
+.letterboxd-content .add-movie {
+  background-color: transparent;
+  border: dashed 1px #cecece84;
+  color: #cecece84;
+  padding: 14px 37px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all ease-in 0.3s;
+}
+
+.letterboxd-content .add-movie:hover {
+  background-color: transparent;
+  border: dashed 1px #cecece84;
+  color: #fff;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-preview {
+  display: flex;
+  background-color: #d9d9d9;
+  max-height: 120px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.selected {
+  border-radius: 20px 0 0 20px;
+  border-right: 10px solid green;
+}
+
+.movie-preview img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.movie-preview-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+
+.movie-preview-details h2 {
+  font-size: 0.8rem;
+  color: #3e3e3e;
+  margin: 15px 0 5px 0;
+}
+
+.movie-preview-details span {
+  display: flex;
+  align-items: center;
+  color: #7f7f7f;
+  gap: 8px;
+  font-size: 0.7rem;
+}
+
+.movie-preview-details span svg {
+  width: 10px;
+  height: 10px;
+  color: #a7a7a7; /*A7A7A7*/
+}
+
+.verdict {
+  margin-top: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 8px;
+  color: white;
+  padding: 4px 8px;
+  margin-right: auto; /* Pushes it to the right */
+}
+
+.verdict.pending {
+  background-color: #ffcd38;
+}
+.verdict.recommended {
+  background-color: #7dd680;
+}
+.verdict.not-recommended {
+  background-color: #db383b;
+}
+
+ul li:hover {
+  transform: scale(98%);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Add Movie Form*/
+.add-movie-form {
+  background-color: #3f3c3c;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.add-movie-form label {
+  margin-bottom: 10px;
+}
+
+.add-movie-form input {
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.add-movie-form textarea {
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.add-movie-form button {
+  border: none;
+  background-color: #fc3c3c;
+  padding: 12px 0;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  width: 130px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: all ease-in 0.3s;
+}
+
+.add-movie-form button:hover {
+  transform: scale(95%);
+}
+
+/* Selected Movie : RIGHT CONTENT*/
+.right-content {
+  background-color: #d9d9d9;
+  padding: 31px;
+  border-radius: 20px;
+  margin-left: 20px;
+  color: #3e3e3e;
+  max-height: 510px;
+}
+.selected-movie {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.selected-movie svg {
+  width: 20px;
+  height: 20px;
+  color: #7f7f7f;
+}
+
+.selected-movie span {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: #7f7f7f;
+}
+
+.selected-movie img {
+  height: 236px;
+  width: 243px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.selected-movie-review p {
+  color: #7f7f7f;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.selected-movie-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-movie-form select {
+  height: 40px;
+  width: 30%;
+  border: none;
+  border-radius: 20px;
+  padding: 0 20px;
+  font-size: 16px;
+  background-color: white;
+  appearance: none; /* Removes default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Custom Arrow */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><polygon points='5,7 15,7 10,14' fill='%23666'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+.selected-movie-form button {
+  height: 40px;
+  width: 15%;
+  margin-top: 20px;
+  margin-left: auto;
+  border: 0;
+  background-color: #fc3c3c;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: all ease-in 0.3s;
+  cursor: pointer;
+}
+
+.selected-movie-form button:hover {
+  transform: scale(98%);
+}
+
+/* Make it Responsive to Mobile View*/
+@media (max-width: 1395px) {
+  .letterboxd-content {
+    grid-template-columns: 1fr 500px;
+  }
+
+  .right-content {
+    max-height: 600px;
+  }
+
+  .selected-movie-form select {
+    width: 50%;
+  }
+
+  .selected-movie-form button {
+    width: 30%;
+  }
+  .selected-movie img {
+    height: 180px;
+    width: 180px;
+  }
+}
+
+@media (max-width: 1066px) {
+  .letterboxd-content {
+    grid-template-columns: 1fr;
+  }
+  .left-content {
+    grid-row: 2;
+    margin-top: 30px;
+  }
+
+  .right-content {
+    grid-row: 1;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 401px) {
+  .container {
+    margin: 1rem 0.2rem;
+  }
+}
